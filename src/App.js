@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { PropTypes } from "prop-types";
+import Info from "./Components/Info.js";
+import { useState } from "react";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Info />
+      <ButtonState></ButtonState>
     </div>
   );
 }
 
+function ButtonState() {
+  const [title, setTitle] = useState("");
+  const [count, setCount] = useState(0);
+  const UpdateTitleClicked = () => {
+    //create function for button click
+    setTitle("We now have a Title");
+  };
+  const UpdateCountClicked = () => {
+    setCount(count + 1);
+  };
+  return (
+    <div>
+      <p>Title:{title}</p>
+      <p>Counter:{count}</p>
+      <button onClick={UpdateTitleClicked}>Update Title</button>
+      <button onClick={UpdateCountClicked}>Update Count</button>
+    </div>
+  );
+}
 export default App;
