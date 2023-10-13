@@ -14,7 +14,7 @@ function ItemsDisplay(props) {
   return (
     <div className="container">
       <div className="row">
-        <h2>Items</h2>
+        <h2>List Students</h2>
       </div>
       <div className="row">
         <table className="table table-striped">

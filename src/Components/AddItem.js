@@ -21,7 +21,7 @@ function AddItem(props) {
   return (
     <div className="container">
       <div className="row">
-        <h2>Add a Item</h2>
+        <h2>Add a Student</h2>
       </div>
       <div className="row">
         <label htmlFor="name-field">Name:</label>
@@ -63,7 +63,7 @@ function AddItem(props) {
           className="btn btn-primary"
           onClick={addItemButtonPressed}
         >
-          Add Item
+          Add Student
         </button>
       </div>
     </div>
