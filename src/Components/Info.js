@@ -1,28 +1,29 @@
 import React from "react";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
 class Info extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    this.state = {
+      count: 0,
+      title: "Hello",
+    };
+    //this.buttonPressed = this.buttonPressed.bind(this);
+  }
+
+  buttonPressed() {
+    this.setState({
+      count: this.state.count + 1,
+    });
   }
   render() {
-    const title = this.props.title;
-    const showTitle = true;
     return (
       <div>
-        <h1>Management System</h1>
-        <p>{showTitle ? title : ""}</p>
-        <p>Insert new Student:</p>
+        <p>Count:{this.state.count}</p>
+        <button onClick={() => this.buttonPressed()}>Click Me!</button>
       </div>
     );
   }
 }
-Info.defaultProps={
-  title: "default"
-};
-Info.propTypes = {
-  title: PropTypes.string,
-};
 
 export default Info;
